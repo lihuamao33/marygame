@@ -1,0 +1,57 @@
+@import "./normalize.css";  /* 将normalize.css样式导入base.css中 */
+
+/* ：root ->获取根元素html */
+/* 其中的“--color-text:”为定义的变量，之后的元素使用该样式时只需用var()引入即可*/
+:root {
+    --color-text:#666;  /* 文字颜色 */
+    --color-high-text:#ff5777;  /* 文字高亮时颜色 */
+    --color-tint:#ff8198;  /* 导航背景颜色 */
+    --color-background:#fff;  /* 部分地方背景是白色的，设置个背景颜色为白色 */
+    --font-size:14px;  /* 设置个整体的字体大小 */
+    --line-height:1.5;
+}
+*,*::before,*::after {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body {
+    font-family:"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+    user-select:none;/* 禁止用户鼠标在页面选中文字/图片等 */
+    -webkit-tap-highlight-color:transparent;/* webkit是苹果浏览器引擎，tap点击，highlight背景高亮，color颜色，颜色用数值调节 */
+    background:var(--color-background);
+    color:var(--color-text);
+    width:100vw;/* vw是当前屏幕宽度的1%，被设置元素的宽度是按照父元素的宽度来设置，
+                   但是100vw是相对于屏幕可见度来设置的，所以会出现50vw比50%大的情况 */
+}
+a {
+    color:var(--color-text);
+    text-decoration: none;/* 超链接下划线不显示 */
+}
+.clear-fix::after {
+    clear:both;
+    content:'';
+    display: block;
+    width:0;
+    height: 0;
+    visibility: hidden;
+}
+.clear-fix {
+    zoom:1;
+}
+.arrow-right {
+    border-top:1px solid #999;
+    border-left:1px solid #999;
+    width: 9px;
+    height: 9px;
+    background-color: transparent;/* 颜色用数值调节 */
+    transform:rotate(135deg);/* 变化为循环 */
+    display: inline-block;
+    margin-left: .1rem;
+}
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
